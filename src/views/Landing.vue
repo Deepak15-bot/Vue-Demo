@@ -3,49 +3,15 @@
     <div class="container">
       <div class="row">
         <div class="col-12 pb-5">
-          <h1 class="text-center text-white">Card Profile</h1>
+          <h1 class="text-center text-white">Dynamic Card Profile</h1>
         </div>
       </div>
-      <div class="row">
-        <div class="col-4">
+      <div class="row" id="example-1">
+        <div class="col-4" v-for="item in items" :key="item.id">
           <a href="#">
             <div class="card">
-              <h2 class="text-center text-white">Card1</h2>
-            </div>
-          </a>
-        </div>
-        <div class="col-4">
-          <a href="#">
-            <div class="card">
-              <h2 class="text-center text-white">Card2</h2>
-            </div>
-          </a>
-        </div>
-        <div class="col-4">
-          <a href="#">
-            <div class="card">
-              <h2 class="text-center text-white">Card3</h2>
-            </div>
-          </a>
-        </div>
-        <div class="col-4">
-          <a href="#">
-            <div class="card">
-              <h2 class="text-center text-white">Card4</h2>
-            </div>
-          </a>
-        </div>
-        <div class="col-4">
-          <a href="#">
-            <div class="card">
-              <h2 class="text-center text-white">Card5</h2>
-            </div>
-          </a>
-        </div>
-        <div class="col-4">
-          <a href="#">
-            <div class="card">
-              <h2 class="text-center text-white">Card6</h2>
+              <h2 class="text-center text-white">{{ item.id }}</h2>
+              <h2 class="text-center text-white">{{ item.name }}</h2>
             </div>
           </a>
         </div>
@@ -56,23 +22,17 @@
 
 <script>
 export default {
-  data() {},
-  methods: {
-    const DataArray = [
-      {
-        id: 1,
-        name: "Deepak",
-      },
-      {
-        id: 2,
-        name: "Neeraj",
-      },
-      {
-        id: 3,
-        name: "Shartak",
-      },
-    ]
+  data() {
+    return {
+      items: [
+        { id: 1, name: "Deepak" },
+        { id: 2, name: "Neeraj" },
+        { id: 3, name: "Anish" },
+        { id: 4, name: "Shartak" },
+      ],
+    };
   },
+  methods: {},
 };
 </script>
 
